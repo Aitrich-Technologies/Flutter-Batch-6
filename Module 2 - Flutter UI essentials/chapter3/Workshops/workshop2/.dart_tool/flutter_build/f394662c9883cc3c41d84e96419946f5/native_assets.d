@@ -1,0 +1,1 @@
+ D:\\Flutter-Bootcamp-FB01\\module\ 2\ flutter\ ui\ essentials\\chapter3\\Workshops\\workshop2\\.dart_tool\\flutter_build\\f394662c9883cc3c41d84e96419946f5\\native_assets.yaml: 
