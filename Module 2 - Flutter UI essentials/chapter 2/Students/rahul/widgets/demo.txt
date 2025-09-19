@@ -1,0 +1,38 @@
+RadioListTile<int>(
+              title: Text('male'),
+              value: 1,
+              groupValue: _selectedValue,
+              onChanged: (int? value) {
+                setState((){
+                  _selectedvalue = value!;
+                });
+              },
+              ),
+
+
+ListTile(
+              title: Text('male'),
+              leading: Radio(
+                groupValue: _selectedvalue,
+                value: 1,
+                onChanged: (value) {},
+                ),
+            ),
+            
+
+ ListTile(
+              title: Text('male'),
+              leading: Radio(
+                groupValue: _selectedValue,
+                value: 1,
+                onChanged: (value) {},
+                ),
+            ),
+            ListTile(
+              title: Text('female'),
+              leading: Radio(
+                groupValue: _selectedValue,
+                value: 1,
+                onChanged: (value) {},
+                ),
+            )

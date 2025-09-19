@@ -1,0 +1,32 @@
+ int _selectedValue =1;    
+
+
+
+
+appBar: AppBar(
+      title: Text('radio button'),
+      backgroundColor: Colors.blueAccent,
+      centerTitle: true,
+      ),
+
+    body: Column(
+        children: [
+  
+          RadioListTile<int>(
+              title: Text('male'),
+              value: 1,
+              groupValue: _selectedValue,
+              onChanged: (int? value) {  
+              },
+              ),
+          RadioListTile(
+            title: Text('female'),
+            groupValue: _selectedValue,
+            value: 0,
+            onChanged: (int? value) {
+
+            },
+            )
+
+        ],
+      ),
