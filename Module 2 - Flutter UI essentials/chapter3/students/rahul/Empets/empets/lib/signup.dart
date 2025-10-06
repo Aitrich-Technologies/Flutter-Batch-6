@@ -16,7 +16,7 @@ class _login extends State<Signup>{
         child: Padding(padding: EdgeInsetsGeometry.all(20),
         child: Column(children: [
 
-          Image.asset('assets/Screenshot_2025-09-23_102935-removebg-preview.png', width: 150, height: 100),
+          Image.asset('assets/Elogo.png', width: 150, height: 100),
             SizedBox(height: 20),
 
             Row(
@@ -123,7 +123,7 @@ SizedBox(height: 30),
                 ),
               onPressed: (){
 
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Mainhome()));
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Mainhome()));
 
             },
             child: Text('Sign Up')),

@@ -38,7 +38,9 @@ class _MenuState extends State<Menu> {
                   elevation: 10,
                 ),
               onPressed: (){
-              Navigator.push(context, MaterialPageRoute(builder: (context) => Login()));
+              Navigator.pushAndRemoveUntil(context, MaterialPageRoute(
+                builder: (context)=>Login()), 
+                (Route<dynamic> route)=>false);
 
             },
             child: Text('Logout')),

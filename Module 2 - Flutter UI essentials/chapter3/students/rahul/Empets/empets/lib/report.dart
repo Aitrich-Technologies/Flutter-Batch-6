@@ -1,4 +1,5 @@
-import 'package:empets/home.dart';
+//import 'package:empets/home.dart';
+import 'package:empets/homemain.dart';
 import 'package:flutter/material.dart';
 
 class Report extends StatefulWidget {
@@ -16,7 +17,7 @@ class _ReportState extends State<Report> {
   bool ische = false;
   bool isch = false;
 
-  // ✅ helper widget to avoid repeating Row code
+  
   Widget buildCheckBox(String text, bool value, Function(bool) onChanged) {
     return Row(
       children: [
@@ -40,7 +41,7 @@ class _ReportState extends State<Report> {
       body: Center(
         child: Container(
           width: 350,
-          height: 500, // fixed box height
+          height: 500, 
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(20),
@@ -56,7 +57,7 @@ class _ReportState extends State<Report> {
               width: 2,
             ),
           ),
-          child: SingleChildScrollView( // ✅ makes content scrollable inside
+          child: SingleChildScrollView(
             padding: const EdgeInsets.all(16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -139,7 +140,7 @@ class sub extends StatelessWidget {
                   elevation: 10,
                 ),
                 onPressed: (){
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Mainpage()));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=>Mainhome()));
               }, child: Text('back')),
           
         ],)

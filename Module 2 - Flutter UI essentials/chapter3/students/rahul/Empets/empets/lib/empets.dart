@@ -24,7 +24,7 @@ class _splash extends State<Empetz>{
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('assets/Screenshot_2025-09-23_102935-removebg-preview.png', width: 350, height: 350), // Your logo
+            Image.asset('assets/Elogo.png', width: 350, height: 350), // Your logo
             SizedBox(height: 20),
             Text(
               'Welcome',
