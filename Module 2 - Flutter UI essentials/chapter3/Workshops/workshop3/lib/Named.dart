@@ -27,12 +27,13 @@ class HomeScreen extends StatelessWidget {
                 style: TextStyle(color: Colors.white),
               ),
             ),
+            const SizedBox(height: 10),
             ElevatedButton(
               style: ElevatedButton.styleFrom(backgroundColor: Colors.blue),
               onPressed: (){
                 Navigator.pushNamed(context, '/settings');
               
-            }, child: Text('Go to settings',
+            }, child: const Text('Go to settings',
             style: TextStyle(color: Colors.white),))
           ],
         ),
@@ -90,7 +91,7 @@ class settingscreen extends StatelessWidget {
             onPressed: () {
               Navigator.pop(context);
             },
-            child: Text(
+            child: const Text(
               'Go Back',
               style: TextStyle(
                 color: Colors.white,

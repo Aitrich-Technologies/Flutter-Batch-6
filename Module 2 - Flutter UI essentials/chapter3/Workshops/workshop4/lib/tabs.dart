@@ -11,13 +11,18 @@ class _MyWidgetState extends State<MyWidget> {
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 1, // Number of tabs
+      length: 3, // Number of tabs
       child: Scaffold(
         appBar: AppBar(
-          title: const Text('TabBar Example'),
+          backgroundColor: Colors.orange[200],
+          title: const Text('Home',
+          style: TextStyle(fontSize: 30),),
+          centerTitle: true,
           bottom: const TabBar(
             tabs: [
-              Tab(icon: Icon(Icons.home)), // Single tab with Home icon
+              Tab(icon: Icon(Icons.home),text: 'Home'),
+              Tab(icon: Icon(Icons.search),text: 'Search',),// Single tab with Home icon
+              Tab(icon: Icon(Icons.person),text: 'Profile',)
             ],
           ),
         ),
@@ -25,10 +30,22 @@ class _MyWidgetState extends State<MyWidget> {
           children: [
             Center(
               child: Text(
-                'Home',
-                style: TextStyle(fontSize: 24), // Centered text for the tab
+                'Home Tab',
+                style: TextStyle(fontSize: 25), // Centered text for the tab
               ),
             ),
+            Center(
+              child: Text(
+                'Search Tab',
+                style: TextStyle(fontSize: 25),
+              ),
+            ),
+            Center(
+              child: Text(
+                'Profile Tab',
+                style: TextStyle(fontSize: 25),
+              ),
+            )
           ],
         ),
       ),
