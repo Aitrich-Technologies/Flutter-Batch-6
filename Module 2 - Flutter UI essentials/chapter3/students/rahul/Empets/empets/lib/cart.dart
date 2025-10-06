@@ -16,8 +16,9 @@ class _ProfileState extends State<Car> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text('Cart',style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
+          Text('View Cart',style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
           Divider(height: 10, thickness: 1, indent: 0, endIndent: 0, color: Colors.black),
+          
         ],
       ),
       ),
