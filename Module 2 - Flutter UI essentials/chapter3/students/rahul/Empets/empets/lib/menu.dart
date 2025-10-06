@@ -21,7 +21,7 @@ class _MenuState extends State<Menu> {
         }, icon: Icon(Icons.arrow_circle_left_rounded)),
 
       ),
-      body: Padding(padding: EdgeInsetsGeometry.all(20),
+      body: Padding(padding: EdgeInsetsGeometry.all(30),
       child: Column(
         children: [
           CircleAvatar(
@@ -29,7 +29,9 @@ class _MenuState extends State<Menu> {
             child: Icon(Icons.person_4_outlined),
             
           ),
-          ElevatedButton(
+          Padding(padding: EdgeInsetsGeometry.all(50),
+          child: Column(children: [
+            ElevatedButton(
               style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
                   foregroundColor: Colors.white,
@@ -43,7 +45,12 @@ class _MenuState extends State<Menu> {
                 (Route<dynamic> route)=>false);
 
             },
-            child: Text('Logout')),
+            child: ListTile(
+              title: Text('Logout'),
+              
+              leading: Icon(Icons.logout),
+            )),
+            SizedBox(height: 20),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
@@ -56,7 +63,30 @@ class _MenuState extends State<Menu> {
               
 
             },
-            child: Text('Settings')),
+            child: ListTile(
+              title: Text('Settings'),
+              leading: Icon(Icons.settings),
+            )),
+            SizedBox(height: 20),
+            
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  foregroundColor: Colors.white,
+                  padding: EdgeInsets.symmetric(horizontal: 40,vertical: 20),
+                  textStyle: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+                  elevation: 10,
+                ),
+              onPressed: (){
+              
+
+            },
+            child: ListTile(
+              title: Text('Favorite'),
+              leading: Icon(Icons.favorite),
+            )),
+          ],),
+          )
             
         ],
       ),
