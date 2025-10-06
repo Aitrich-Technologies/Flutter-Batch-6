@@ -1,8 +1,15 @@
 import 'package:flutter/material.dart';
 
-class Instagarmlogin extends StatelessWidget{
+class Instagarmlogin extends StatefullWidget{
   Instagarmlogin({super.key});
   @override
+  State<Instagarmlogin> createState() => _insta();
+}
+
+class _insta extends State<Instagarmlogin>
+
+
+
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
