@@ -34,6 +34,12 @@ class _NavigationExampleState extends State<NavigationExample> {
             label: 'Home',
           ),
           NavigationDestination(
+          icon: Badge(
+            label: Text(''),
+            child: Icon(Icons.notifications),
+          ), 
+          label: 'Notification'),
+          NavigationDestination(
             icon: Badge(
               label: Text('3'),
               child: Icon(Icons.messenger_sharp),
@@ -57,6 +63,41 @@ class _NavigationExampleState extends State<NavigationExample> {
           ),
         ),
 
+        //Notification Page
+        Column(
+          children: [
+            Container(
+              margin: const EdgeInsets.all(10),
+              //padding: const EdgeInsets.all(10),
+              height: 80,
+              width: 500,
+              decoration: BoxDecoration(
+                color: Colors.grey[400],
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const ListTile(
+                leading: Icon(Icons.notifications),
+                title: Text("Notification 1"),
+                subtitle: Text("This is a notification"),
+              ),
+            ),
+            Container(
+              height: 80,
+              width: 500,
+              margin: const EdgeInsets.all(10),
+             // padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                color: Colors.grey[400],
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: const ListTile(
+                leading: Icon(Icons.notifications),
+                title: Text("Notification"),
+                subtitle: Text("This is a notification"),
+              ),
+            )
+          ],
+        ),
         /// Messages page
         ListView.builder(
           reverse: true,

@@ -4,6 +4,6 @@ import 'package:workshop2/splashscreen.dart';
 void main(){
   runApp(const MaterialApp(
     debugShowCheckedModeBanner: false,
-    home: HomeScreen(),
+    home: HomeScreen20(),
   ));
 }
