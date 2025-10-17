@@ -18,6 +18,11 @@ class _ProfileState extends State<Car> {
         children: [
           Text('View Cart',style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
           Divider(height: 10, thickness: 1, indent: 0, endIndent: 0, color: Colors.black),
+          Container(
+            width: 500,
+            height: 200,
+            
+          )
           
         ],
       ),
