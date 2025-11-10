@@ -1,8 +1,8 @@
 // ignore_for_file: deprecated_member_use
 
 void main(List<String> args) {
-  int x = ;
-  int y = ;
+  int x = 5;
+  int y = 0;
 
   try {
     int xy = x ~/ y;

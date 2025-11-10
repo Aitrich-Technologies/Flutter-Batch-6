@@ -1,10 +1,12 @@
 void main() {
   try {
-    //throw here
-  } catch (e) {
+    throw MyCustomException("This is a custom exception message");
+  }on MyCustomException 
+  catch (e) {
     print(e);
   }
-}class MyCustomException implements Exception {
+}
+class MyCustomException implements Exception {
   final String message;
 
   MyCustomException(this.message);
