@@ -1,0 +1,26 @@
+void main()
+{
+  print("CASE_1:");
+  try
+  {
+    int result = 10 ~/ 0;
+    print("The result is $result");
+  }on IntegerDivisionByZeroException
+  {
+    print("Cannot divided by zero");
+  }
+}
+
+
+void main()
+{
+  print("CASE_2:");
+  try
+  {
+    int result = 10 ~/ 0;
+    print("The result is $result");
+  }catch (e)
+  {
+    print("The exception throw is $e");
+  }
+}
