@@ -1,9 +1,9 @@
 void main()
 {
-    int num = 500;
-    int orgnum = num;
-    int reversed = 0;
-    int reminder;
+    var num = "Madam";
+    var orgnum = num;
+    var reversed = 0;
+    var reminder;
 
     while(num>0)
     {
