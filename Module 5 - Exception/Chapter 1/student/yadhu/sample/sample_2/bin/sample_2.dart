@@ -1,6 +1,7 @@
+
 void main()
 {
-  print("CASE_3:");
+  print("CASE_2:");
   try
   {
     int result = 10 ~/ 0;
@@ -8,8 +9,5 @@ void main()
   }catch (e)
   {
     print("The exception throw is $e");
-  }finally
-  {
-    print("This is finally clause");
   }
 }

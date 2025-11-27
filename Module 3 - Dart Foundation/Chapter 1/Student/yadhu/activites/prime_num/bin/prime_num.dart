@@ -1,26 +1,30 @@
 import 'dart:math';
 
-void main(){
-int num=2;
-if (ispr(num))
+void main()
 {
-print("$num is prime");
-}
-else
-{
-  print('$num not prime number');
-}
+  int num=2;
+  if (prime(num))
+  {
+    print("$num is prime");
+  }
+  else
+  {
+    print('$num not prime number');
+  }
 }
 
-bool ispr(int num)
+bool prime(int num)
 {
-if (num <= 1){
-  return false;
-}
-for (int i = 2; i <= sqrt(num); i++) {
-    if (num % i == 0) {
+    if (num <= 1)
+    {
       return false;
     }
-}
-return true;
+    for (int i = 2; i <= sqrt(num); i++)
+    {
+      if (num % i == 0)
+      {
+        return false;
+      }
+    }
+    return true;
 }
