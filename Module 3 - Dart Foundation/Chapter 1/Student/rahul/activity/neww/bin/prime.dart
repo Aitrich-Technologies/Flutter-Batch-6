@@ -1,7 +1,7 @@
 import 'dart:math';
 
 void main(){
-int num=9;
+int num=7;
 if (ispr(num))
 {
 print("$num is prime");
