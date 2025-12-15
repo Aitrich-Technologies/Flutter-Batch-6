@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-
 class Bottomsheett extends StatefulWidget {
   const Bottomsheett({super.key});
-
   @override
   State<Bottomsheett> createState() => _BottomsheettState();
 }
-
 class _BottomsheettState extends State<Bottomsheett> {
   @override
   Widget build(BuildContext context) {
@@ -23,7 +20,6 @@ class _BottomsheettState extends State<Bottomsheett> {
                 child: Center(
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    
                     children: [
                       Text('Model Bottom Sheet'),
                       ElevatedButton(
@@ -35,10 +31,7 @@ class _BottomsheettState extends State<Bottomsheett> {
                   ),
                 ),
               );
-            }
-          );
-        },
+            });},
       ),
     );
-  }
-}
+  }}

@@ -3,16 +3,16 @@ import 'package:exercise_2/settings.dart';
 import 'package:flutter/material.dart';
 class Drawerr extends StatefulWidget {
   const Drawerr({super.key});
-
   @override
-  State<Drawerr> createState() => _DrawerrState();
-}
+  State<Drawerr> createState() => _DrawerrState();}
 class _DrawerrState extends State<Drawerr> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('HOME',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+        title: Text('HOME',
+          style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+        ),
       ),
       drawer: Drawer(       
         child: ListView(
@@ -22,7 +22,9 @@ class _DrawerrState extends State<Drawerr> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text('Drawer Header',style: TextStyle(fontSize: 20,color: Colors.white),)
+                  Text('Drawer Header',
+                    style: TextStyle(fontSize: 20,color: Colors.white),
+                  ),
                 ],
               ),
             ),
@@ -32,6 +34,7 @@ class _DrawerrState extends State<Drawerr> {
               onTap: () => Navigator.pop(context),
             ),
             ListTile(
+              
               leading: Icon(Icons.person),
               title: Text('Profile'),
               onTap: () {

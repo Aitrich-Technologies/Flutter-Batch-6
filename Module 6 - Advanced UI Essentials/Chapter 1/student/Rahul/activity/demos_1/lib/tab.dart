@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-
 class tabbs extends StatefulWidget {
   const tabbs({super.key});
-
   @override
   State<tabbs> createState() => _tabbsState();
 }
-
 class _tabbsState extends State<tabbs> {
   @override
   Widget build(BuildContext context) {
@@ -32,8 +29,9 @@ class _tabbsState extends State<tabbs> {
             )
           ]),
         ),
-        
-      )
-    );
- }
-}
+        body: TabBarView(
+          children: [
+            Center(child: Text("chat page"),),
+            Center(child: Text("calls page")),
+            Center(child: Text("settings page")),
+            ]),),);}}

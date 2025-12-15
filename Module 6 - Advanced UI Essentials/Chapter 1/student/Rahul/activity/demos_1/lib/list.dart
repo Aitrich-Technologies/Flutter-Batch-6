@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class Listvieww  extends StatelessWidget{
   Listvieww({super.key});
   @override
@@ -12,30 +11,22 @@ class Listvieww  extends StatelessWidget{
     ),
     body:  ListView(
       children: [
-        ListTile(
-          
+        ListTile( 
           leading: Icon(Icons.map),
           title: Text('map'),
-          textColor: Colors.red,
-          iconColor: Colors.blue,
-          tileColor: Colors.yellowAccent,
-          
           onTap: () {
-
           },
         ),
         ListTile(
           leading: Icon(Icons.photo),
           title: Text('Album'),
           onTap: () {
-            
           },
         ),
         ListTile(
           leading: Icon(Icons.phone),
           title: Text('Phone'),
-          onTap: () {
-            
+          onTap: () { 
           },
         )
       ],

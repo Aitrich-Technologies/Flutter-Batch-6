@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-
 class Bsheet extends StatefulWidget {
   const Bsheet({super.key});
-
   @override
   State<Bsheet> createState() => _BsheetState();
 }
-
 class _BsheetState extends State<Bsheet> {
   @override
   Widget build(BuildContext context) {
@@ -33,9 +30,7 @@ class _BsheetState extends State<Bsheet> {
                   ),
                 ),
               );
-            }
-            );
-        },
+            });},
       ),
     );
   }

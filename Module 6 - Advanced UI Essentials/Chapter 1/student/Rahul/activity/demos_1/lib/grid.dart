@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
-
 class Gridd extends StatefulWidget {
   const Gridd({super.key});
-
   @override
   State<Gridd> createState() => _GriddState();
 }
-
 class _GriddState extends State<Gridd> {
   @override
   Widget build(BuildContext context) {
@@ -23,10 +20,10 @@ class _GriddState extends State<Gridd> {
             var xindex = index %8;
             var yindex =(index/8).floor();
             return Container(
-              color: (xindex + yindex).isEven ? Colors.blue : Colors.white,
+              color: (xindex + yindex).isEven ? Colors.blue : Colors.black,
               child: Stack(
                 children: [
-                  Text('LM10'),
+                 
                 ],
               ),
             );
