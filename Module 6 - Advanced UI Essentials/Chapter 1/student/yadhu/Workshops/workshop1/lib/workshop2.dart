@@ -32,7 +32,7 @@ class _Favorites2State extends State<Favorites2> {
             ),
             GestureDetector(
               onTap: () {
-                // Navigate to the notification page
+              
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => NotificationPage(isDarkModeEnabled: isDarkThemeEnabled)),
