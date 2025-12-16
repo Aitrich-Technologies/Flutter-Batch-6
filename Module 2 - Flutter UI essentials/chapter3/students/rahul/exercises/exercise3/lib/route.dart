@@ -96,7 +96,10 @@ class Profile extends StatelessWidget {
             elevation: 5,
           ),
           onPressed: (){  
-            Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context)=>Login()), (Route<dynamic> route)=>false);
+            Navigator.pushAndRemoveUntil(
+              context, MaterialPageRoute(
+                builder: (context)=>Login()),
+                 (Route<dynamic> route)=>false);
           }, 
           child: Text('Logout',style: TextStyle(
             color: Colors.white
