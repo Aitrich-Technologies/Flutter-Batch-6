@@ -1,0 +1,29 @@
+Container(
+      child: ElevatedButton(
+        onPressed: (){
+
+        },
+      style: ElevatedButton.styleFrom(
+          shape: CircleBorder(),
+          padding: EdgeInsets.all(10),
+        ),
+        child: Text(btntxt,
+        style: TextStyle(fontSize:40,color: txtcolor)),
+        
+        ),
+  );
+
+
+
+  InkWell(
+      onTap: () {
+        
+      },
+      borderRadius: BorderRadius.circular(40),
+      child: CircleAvatar(
+        radius: 40,
+        backgroundColor: btncolor,
+        child: Text(btntxt,
+        style: TextStyle(color: txtcolor,fontSize: 35,fontWeight: FontWeight.bold))
+      ),
+    );
