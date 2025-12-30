@@ -39,7 +39,7 @@ class _DoggState extends State<Dogg> {
                 width: 500,
                 height: 115,
                 decoration: BoxDecoration(
-                  color:Colors.cyanAccent,
+                  color:Color.fromARGB(255, 255, 255, 255),
                   borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(
@@ -71,7 +71,7 @@ Container(
                 width: 245,
                 height: 150,
                 decoration: BoxDecoration(
-                  color:  Colors.cyanAccent,
+                  color:  Colors.white,
                   borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(
@@ -103,7 +103,7 @@ Container(
                 width: 245,
                 height: 150,
                 decoration: BoxDecoration(
-                  color:  Colors.cyanAccent,
+                  color:  Colors.white,
                   borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(
@@ -135,7 +135,7 @@ Container(
                 width: 500,
                 height: 50,
                 decoration: BoxDecoration(
-                  color:  Colors.cyanAccent,
+                  color:  Colors.white,
                   borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(
@@ -161,7 +161,7 @@ Container(
                 width: 500,
                 height: 140,
                 decoration: BoxDecoration(
-                  color:  Colors.cyanAccent,
+                  color:  Colors.white,
                   borderRadius: BorderRadius.circular(20),
                 boxShadow: [
                   BoxShadow(
