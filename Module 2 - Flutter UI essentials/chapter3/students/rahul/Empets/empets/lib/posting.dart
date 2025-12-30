@@ -49,7 +49,7 @@ class _PostState extends State<Post> {
               Padding(padding: EdgeInsetsGeometry.symmetric(horizontal: 20),
               child: Container(
                 width: 500,
-                height: 730,
+                height: 750,
                 decoration: BoxDecoration(
                   color: Colors.white,
                    borderRadius: BorderRadius.circular(20),

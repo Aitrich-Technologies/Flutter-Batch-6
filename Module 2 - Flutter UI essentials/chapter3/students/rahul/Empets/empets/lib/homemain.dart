@@ -1,5 +1,5 @@
 import 'package:empets/home.dart';
-import 'package:empets/menu.dart';
+//import 'package:empets/menu.dart';
 //import 'package:empets/homebuyer.dart';
 //import 'package:empets/homeseller.dart';
 import 'package:empets/message.dart';
@@ -19,15 +19,15 @@ class _MainhomeState extends State<Mainhome> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 226, 227, 227),
-        leading: IconButton(onPressed: (){
+//         leading: IconButton(onPressed: (){
 
 
-Navigator.push(context, MaterialPageRoute(builder: (context)=>Menu()));
+// Navigator.push(context, MaterialPageRoute(builder: (context)=>Menu()));
 
 
 
-        },
-         icon:Icon(Icons.menu)),
+//         },
+//          icon:Icon(Icons.menu)),
         title: Text('Empetz'),
         centerTitle: true,
         actions: [
@@ -40,7 +40,35 @@ Navigator.push(context, MaterialPageRoute(builder: (context)=>Menu()));
           SizedBox(width: 20),
         ],
       ),
-      
+      drawer: Drawer(
+        backgroundColor: const Color.fromARGB(255, 239, 239, 239),
+        shadowColor: Colors.black,
+        surfaceTintColor: Colors.deepOrange,
+        child: ListView(
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(color: const Color.fromARGB(255, 204, 246, 255)),
+              child: Column(
+                children: [
+                  
+                  CircleAvatar(
+                    backgroundColor: const Color.fromARGB(255, 48, 77, 86),
+                    radius: 40,
+                    child: Icon(Icons.person,size: 50,color: Colors.white,),),
+                    SizedBox(height: 10,),
+                    Text('RAHUL M G',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),),
+                ], ),
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text('Home'),
+              onTap: () => Navigator.pop(context),
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text('Settings'),
+            ),]),),
       body: DefaultTabController(length: 2, child: Column(children: [
         Container(
           height: 50,
@@ -57,8 +85,6 @@ Navigator.push(context, MaterialPageRoute(builder: (context)=>Menu()));
               child: Tab(text: 'buyer',),),
               SizedBox(width: 500,
               child: Tab(text: 'seller',),),
-              
-
           ]),
         ),
         Expanded(child: TabBarView(children: [
