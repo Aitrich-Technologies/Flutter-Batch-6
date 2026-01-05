@@ -13,8 +13,8 @@ class Home extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.orange,
-          title: const Text("Bottom Sheet with Tabs"),
-          bottom: const TabBar(
+          title:Text("Bottom Sheet with Tabs"),
+          bottom:TabBar(
             labelColor: Colors.grey,
             unselectedLabelColor: Colors.blueGrey,
             tabs: [
@@ -24,7 +24,7 @@ class Home extends StatelessWidget {
             ],
           ),
         ),
-        body: const TabBarView(
+        body:TabBarView(
           children: [
             Chats(),
             Calls(),

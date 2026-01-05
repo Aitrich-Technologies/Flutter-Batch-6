@@ -2,19 +2,7 @@ import 'package:flutter/material.dart';
 
 class Activity4 extends StatelessWidget {
   const Activity4({super.key});
-  Widget tile({
-    required IconData icon,
-    required String title,
-    required String subtitle,
-  }){
-    return ListTile(
-      leading: Icon(icon,color:  Colors.grey,),
-      title: Text(title,style: TextStyle(fontWeight: FontWeight.w500),),
-      subtitle: Text(subtitle),
-      onTap: (){},
-    );
-  }
-
+ 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,26 +13,36 @@ class Activity4 extends StatelessWidget {
       ),
       body: ListView(
         children: [
-          tile(icon: Icons.network_cell, 
-          title: "Mobile Network", 
-          subtitle: "Manage Network Settings",),
-          const Divider(height: 1,),
-          tile(icon: Icons.language, 
-          title: "Language", 
-          subtitle: "Change App Language",),
-          const Divider(height: 1,),
-          tile(icon: Icons.palette, 
-          title: "Theme", 
-          subtitle: "Choose Light and Dark Theme",),
-          const Divider(height: 1,),
-          tile(icon: Icons.volume_up, 
-          title: "Sounds & Vibrations", 
-          subtitle: "Adjust Sound and Vibration Settings",),
-          const Divider(height: 1,),
-          tile(icon: Icons.settings, 
-          title: "More Settings", 
-          subtitle: "Additional Settings Options",),
-          const Divider(height: 1,),
+          ListTile(
+            leading: Icon(Icons.network_cell,color: Colors.grey,),
+            title:Text( "Mobile Network", ),
+            subtitle:Text( "Manage Network Settings",),
+          ), 
+          Divider(height: 1,),
+          ListTile(
+            leading: Icon(Icons.language,color: Colors.grey,),
+            title:Text( "Language", ),
+            subtitle:Text( "Change App Language",),
+          ),
+          Divider(height: 1,),
+          ListTile(
+            leading: Icon(Icons.palette,color: Colors.grey,),
+            title:Text( "Theme", ),
+            subtitle:Text( "Choose Light and Dark Theme",),
+          ),
+         Divider(height: 1,),
+          ListTile(
+            leading: Icon(Icons.volume_up,color: Colors.grey,),
+            title:Text( "Sounds & Vibrations", ),
+            subtitle:Text( "Adjust Sounds and Vibration Settings",),
+          ),
+          Divider(height: 1,),
+          ListTile(
+            leading: Icon(Icons.settings,color: Colors.grey,),
+            title:Text( "More Settings", ),
+            subtitle:Text( "Additional Settings Options",),
+          ),
+          Divider(height: 1,),
         ],
       ),
     );

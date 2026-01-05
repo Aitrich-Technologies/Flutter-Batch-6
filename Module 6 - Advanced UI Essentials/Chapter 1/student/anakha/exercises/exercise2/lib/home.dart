@@ -7,13 +7,13 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Home'),
+        title:Text('Home'),
       ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            const DrawerHeader(
+            DrawerHeader(
               decoration: BoxDecoration(color: Colors.blue),
               child: Text(
                 'Navigation Menu',
@@ -21,32 +21,30 @@ class Home extends StatelessWidget {
               ),
             ),
             ListTile(
-              leading: const Icon(Icons.home),
-              title: const Text('Home'),
+              leading:Icon(Icons.home),
+              title:Text('Home'),
               onTap: () {
                 Navigator.pop(context); 
               },
             ),
             ListTile(
-              leading: const Icon(Icons.person),
-              title: const Text('Profile'),
+              leading:Icon(Icons.person),
+              title: Text('Profile'),
               onTap: () {
-                Navigator.pop(context);
                 Navigator.pushNamed(context, '/profile');
               },
             ),
             ListTile(
-              leading: const Icon(Icons.settings),
-              title: const Text('Settings'),
+              leading:Icon(Icons.settings),
+              title: Text('Settings'),
               onTap: () {
-                Navigator.pop(context);
                 Navigator.pushNamed(context, '/settings');
               },
             ),
           ],
         ),
       ),
-      body: const Center(
+      body:Center(
         child: Text(
           'Home Page',
           style: TextStyle(fontSize: 18),

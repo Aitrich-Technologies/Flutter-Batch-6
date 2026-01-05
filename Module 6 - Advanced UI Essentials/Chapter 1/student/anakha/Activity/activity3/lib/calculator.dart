@@ -16,9 +16,7 @@ class _CalculatorState extends State<Calculator> {
   String history = "";
   bool isResultShown = false;
 
-  
-
-   void onButtonPress(String value) {
+  void onButtonPress(String value) {
   setState(() {
     if (value == "AC") {
       display = "0";
@@ -27,61 +25,92 @@ class _CalculatorState extends State<Calculator> {
       history = "";
       shouldClear = false;
     }
-
     else if (value == "+/-") {
       display = display.startsWith("-")
           ? display.substring(1)
           : "-$display";
     }
-
-    else if (value == "%") {
-      display = (double.parse(display) / 100).toString();
+  else if (value == "%") {
+  num1 = double.parse(display);
+  operator = "%";
+  history = "$display %";
+  shouldClear = true;
+  isResultShown = false;
+}
+else if (value == "+" || value == "-" || value == "x" || value == "÷") {
+  if (display == "0" && history.isEmpty) {
+    operator = value;
+    history = value;
+    shouldClear = true;
+    isResultShown = false;
+  } else {
+    num1 = double.parse(display);
+    operator = value;
+    history = "$display $operator";
+    shouldClear = true;
+    isResultShown = false;
+  }
+}
+else if (value == "%") {
+  if (display == "0" && history.isEmpty) {
+    operator = "%";
+    history = "%";
+    shouldClear = true;
+    isResultShown = false;
+  } else {
+    num1 = double.parse(display);
+    operator = "%";
+    history = "$display %";
+    shouldClear = true;
+    isResultShown = false;
+  }
+}
+else if (value == "=") {
+  history = history.trim();
+  double result = 0;
+  if (operator == "%") {
+    result = num1 / 100; 
+  } else {
+    double num2 = double.parse(display);
+    history = "$history $display";
+    switch (operator) {
+      case "+":
+        result = num1 + num2;
+        break;
+      case "-":
+        result = num1 - num2;
+        break;
+      case "x":
+        result = num1 * num2;
+        break;
+      case "÷":
+        result = num2 != 0 ? num1 / num2 : 0;
+        break;
     }
-
-    else if (value == "+" || value == "-" || value == "x" || value == "÷") {
-      num1 = double.parse(display);
-      operator = value;
-      history = "$display $operator";
-      shouldClear = true;
-    }
-      else if (value == "=") {
-      if (isResultShown) return;
-      double num2 = double.parse(display);
-      history = "$history $display =";
-
-      switch (operator) {
-        case "+":
-          display = (num1 + num2).toString();
-          break;
-        case "-":
-          display = (num1 - num2).toString();
-          break;
-        case "x":
-          display = (num1 * num2).toString();
-          break;
-        case "÷":
-          display = (num2 != 0 ? num1 / num2 : 0).toString();
-          break;
-      }
-       isResultShown = true;
-       shouldClear = true;
-    }
-
-    else {
-      if (display == "0" || shouldClear) {
-        display = value == "." ? "0." : value;
-        shouldClear = false;
-      } else {
-        if (value == "." && display.contains(".")) return;
-        display += value;
-      }
-    }
-
-    
-    if (display.endsWith(".0")) {
-      display = display.replaceAll(".0", "");
-    }
-  });
+  }
+  display = result.toString();
+  isResultShown = true;
+  shouldClear = true;
+}
+else {
+  if (shouldClear) {
+    display = value == "." ? "0." : value;
+    shouldClear = false;
+    isResultShown = false;
+  }
+  else if (display == "0" && value != ".") {
+   
+    display = value;
+  }
+  else if (value == "." && !display.contains(".")) {
+    display += ".";
+  }
+  else if (value != ".") {
+    display += value;
+  }
+}
+}
+);
 }
 
    Widget calcButton(String text,
@@ -92,7 +121,6 @@ class _CalculatorState extends State<Calculator> {
     return SizedBox(
       width: width,
       height: 75,
-      
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: bgColor,
@@ -115,30 +143,29 @@ class _CalculatorState extends State<Calculator> {
             Expanded (
               child: Container(
                 width: double.infinity, 
-                padding: const EdgeInsets.all(20),
+                padding:EdgeInsets.all(20),
                 child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
-          history,
-          textAlign: TextAlign.right,
-          style: const TextStyle(
-            color: Colors.grey,
-            fontSize: 24,
-          ),
-        ),
-        const SizedBox(height: 8),
-        Text(
-          display,
-          textAlign: TextAlign.right, 
-          style: const TextStyle(
-            color: Colors.white,
-            fontSize: 64,
-          ),
-        ),
-
-                  ],
+                    history,
+                    textAlign: TextAlign.right,
+                    style:TextStyle(
+                    color: Colors.grey,
+                    fontSize: 24,
+                    ),
+                  ),
+                  SizedBox(height: 8),
+                  Text(
+                    display,
+                    textAlign: TextAlign.right, 
+                    style:TextStyle(
+                      color: Colors.white,
+                      fontSize: 64,
+                    ),
+                  ),
+                ],
                ),
               ),
               ),
@@ -157,7 +184,7 @@ class _CalculatorState extends State<Calculator> {
                       bgColor: Colors.orange,textColor: Colors.white),
                     ],
                   ),
-                  const SizedBox(height: 10,),
+                  SizedBox(height: 10,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -167,7 +194,7 @@ class _CalculatorState extends State<Calculator> {
                       calcButton("x",bgColor: Colors.orange),
                     ],
                   ),
-                   const SizedBox(height: 10,),
+                  SizedBox(height: 10,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -177,7 +204,7 @@ class _CalculatorState extends State<Calculator> {
                       calcButton("-",bgColor: Colors.orange),
                     ],
                   ),
-                   const SizedBox(height: 10,),
+                  SizedBox(height: 10,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
@@ -187,16 +214,18 @@ class _CalculatorState extends State<Calculator> {
                       calcButton("+",bgColor: Colors.orange),
                     ],
                   ),
-                   const SizedBox(height: 10,),
+                  SizedBox(height: 10,),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
                       SizedBox(
                         height: 70,
                         width: 200,
-                        child: ElevatedButton(onPressed: (){
-                          calcButton("0");
-                        },
+                        child:ElevatedButton(
+                          onPressed: () {
+                            onButtonPress("0"); 
+                              },
+
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Color.fromARGB(255, 44, 44, 44)
                         ),
@@ -210,11 +239,12 @@ class _CalculatorState extends State<Calculator> {
                       calcButton("=",bgColor: Colors.orange),
                     ],
                   ),
-                  const SizedBox(height: 20,),
+                  SizedBox(height: 20,),
                 ],
               )
-          ],
-        )),
+            ],
+        )
+      ),
     );
   }
 }

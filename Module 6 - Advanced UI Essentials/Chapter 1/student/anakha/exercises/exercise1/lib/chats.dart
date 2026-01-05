@@ -9,20 +9,26 @@ class Chats extends StatelessWidget {
         return Container(
           height: 200,
           color: Colors.amber,
-          child: Column(
+          child:Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                "Modal BottomSheet",
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-              const SizedBox(height: 20),
+              SizedBox(
+                width: 500,
+                child: Center(
+                  child: Text(
+                    "Modal BottomSheet",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
+
+              SizedBox(height: 20),
               ElevatedButton(
                 onPressed: () => Navigator.pop(context),
-                child: const Text("Close"),
+                child: Text("Close"),
               ),
             ],
-                      ),
+          ),
         );
       },
     );
@@ -32,7 +38,7 @@ class Chats extends StatelessWidget {
     return Center(
       child: ElevatedButton(
         onPressed: () => _showBottomSheet(context),
-        child: const Text("Open Bottom Sheet"),
+        child:Text("Open Bottom Sheet"),
       ),
     );
   }

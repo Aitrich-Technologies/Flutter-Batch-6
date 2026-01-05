@@ -7,12 +7,12 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-  title: const Text('ListView with End Drawer'),
+  title:Text('ListView with End Drawer'),
   actions: [
     Builder(
       builder: (context) {
         return IconButton(
-          icon: const Icon(Icons.menu),
+          icon:Icon(Icons.menu),
           onPressed: () {
             Scaffold.of(context).openEndDrawer();
           }
@@ -25,7 +25,7 @@ class Home extends StatelessWidget {
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
-            const DrawerHeader(
+            DrawerHeader(
               decoration: BoxDecoration(color: Colors.blue),
               child: Text(
                 'Menu',
@@ -33,22 +33,22 @@ class Home extends StatelessWidget {
               ),
             ),
             ListTile(
-              leading: const Icon(Icons.account_circle),
-              title: const Text('Account'),
+              leading:Icon(Icons.account_circle),
+              title: Text('Account'),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
              ListTile(
-              leading: const Icon(Icons.settings),
-              title: const Text('Settings'),
+              leading:Icon(Icons.settings),
+              title:Text('Settings'),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              leading: const Icon(Icons.help),
-              title: const Text('Help'),
+              leading:Icon(Icons.help),
+              title:Text('Help'),
               onTap: () {
                 Navigator.pop(context);
               },

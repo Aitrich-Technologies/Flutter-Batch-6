@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Gridview extends StatelessWidget{
+class Gridview extends StatelessWidget {
   const Gridview({super.key});
 
   @override
@@ -12,19 +12,22 @@ class Gridview extends StatelessWidget{
         centerTitle: true,
       ),
       backgroundColor: Colors.white,
-      body: Padding(padding: EdgeInsets.all(8),
-      child: GridView.builder(
-        gridDelegate:SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 8),
-          itemBuilder:(context,index){
+      body: Padding(
+        padding: EdgeInsets.all(8),
+        child: GridView.builder(
+          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 8,
+          ),
+          itemBuilder: (context, index) {
             var xindex = index % 8;
-            var yindex = (index/8).floor();
+            var yindex = (index / 8).floor();
             return Container(
-              color: (xindex + yindex).isEven ? Colors.black : Colors.red,
-              child: Stack(
-                children: [],
-              ),
+              color: (xindex + yindex).isEven ? 
+              Colors.black : Colors.white,
+              child: Stack(children: []),
             );
-          }),
+          },
+        ),
       ),
     );
   }
