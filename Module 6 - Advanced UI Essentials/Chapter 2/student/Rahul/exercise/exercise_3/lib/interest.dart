@@ -47,9 +47,9 @@ class _interestState extends State<interest> {
       namectr.clear();
     mobctr.clear();
     pinctr.clear();
-    nameerror = null;
-    moberror = null;
-    pinerror = null;
+    // nameerror = null;
+    // moberror = null;
+    // pinerror = null;
     selectedGender= null;
     });
   }

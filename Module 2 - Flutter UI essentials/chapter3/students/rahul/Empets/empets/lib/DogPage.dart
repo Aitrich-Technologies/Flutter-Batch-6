@@ -19,7 +19,7 @@ class  _cat extends State<Dogpage>{
           children: [
             SizedBox(height: 30),
 
-            Padding(padding: EdgeInsetsGeometry.symmetric(horizontal: 70),
+            Padding(padding: EdgeInsetsGeometry.symmetric(horizontal: 10),
           child: TextField(
             
               decoration: InputDecoration(
@@ -31,7 +31,7 @@ class  _cat extends State<Dogpage>{
             ),),
             SizedBox(height: 30),
 
-           Padding(padding: EdgeInsetsGeometry.symmetric(horizontal: 30),
+           Padding(padding: EdgeInsetsGeometry.symmetric(horizontal: 5),
            child: Column(
             children: [
 
@@ -56,31 +56,36 @@ class  _cat extends State<Dogpage>{
              ),
              child: Row(
               children: [
-                SizedBox(width: 10),
+                SizedBox(width: 5),
                 CircleAvatar(
-                  radius: 65,
+                  radius: 50,
                   backgroundImage: AssetImage("assets/dog.png"),
                   
                 ),
-                SizedBox(width: 20),
+                SizedBox(width: 5),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                   Text('Golden Retriever',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
                   Text('male',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
-                  Text('20000 rs',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),)
-                ],),
-                SizedBox(width: 30),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                  IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
-                  SizedBox(height: 20),
-                  ElevatedButton(onPressed: (){
+                  Text('20000 rs',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                  Row(
+                    
+                    children: [
+                      SizedBox(width: 30,),
+                      ElevatedButton(onPressed: (){
                     Navigator.push(context, MaterialPageRoute(builder: (context)=> Dogg()));
 
                   }, child: Text('View')),
-                ],)
+                  SizedBox(width: 20,),
+                  IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
+                    ],
+                  ),
+                  
+                  
+                ],),
+                
+                
               ],
              ),
               
@@ -108,30 +113,32 @@ class  _cat extends State<Dogpage>{
              ),
              child: Row(
               children: [
-                SizedBox(width: 10),
+                SizedBox(width: 5),
                 CircleAvatar(
-                  radius: 65,
+                  radius: 50,
                   backgroundImage: AssetImage("assets/Beagle.jpg"),
                   
                 ),
-                SizedBox(width: 60),
+                SizedBox(width: 5),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                   Text('Beagle',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
                   Text('female',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
-                  Text('30000 rs',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),)
+                  Text('30000 rs',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                  Row(
+                    children: [
+                      SizedBox(width: 30,),
+                      ElevatedButton(onPressed: (){
+                                      
+                                      }, child: Text('View')),
+                                      SizedBox(width: 20,),
+                                      IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
+                    ],
+                  ),
+                   
                 ],),
-                SizedBox(width: 60),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                  IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
-                  SizedBox(height: 20),
-                  ElevatedButton(onPressed: (){
-
-                  }, child: Text('View')),
-                ],)
+                
               ],
              ),
               
@@ -159,30 +166,33 @@ class  _cat extends State<Dogpage>{
              ),
              child: Row(
               children: [
-                SizedBox(width: 10),
+                SizedBox(width: 5),
                 CircleAvatar(
-                  radius: 65,
+                  radius: 50,
                   backgroundImage: AssetImage("assets/Vizsla.jpg"),
                   
                 ),
-                SizedBox(width: 60),
+                SizedBox(width: 5),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                   Text('Vizsla',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
                   Text('male',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
-                  Text('50000 rs',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),)
+                  Text('50000 rs',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                  Row(
+                    children: [
+                      SizedBox(width: 30,),
+                      
+                      
+                      ElevatedButton(onPressed: (){
+                      
+                      }, child: Text('View')),
+                      SizedBox(height: 20),
+                      IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
+                    ],
+                  )
                 ],),
-                SizedBox(width: 60),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                  IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
-                  SizedBox(height: 20),
-                  ElevatedButton(onPressed: (){
-
-                  }, child: Text('View')),
-                ],)
+                
               ],
              ),
               
@@ -210,30 +220,34 @@ class  _cat extends State<Dogpage>{
              ),
              child: Row(
               children: [
-                SizedBox(width: 10),
+                SizedBox(width: 5),
                 CircleAvatar(
-                  radius: 65,
+                  radius: 50,
                   backgroundImage: AssetImage("assets/Husky.jpg"),
                   
                 ),
-                SizedBox(width: 30),
+                SizedBox(width: 5),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                   Text('Siberian Husky',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
                   Text('male',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
-                  Text('45000',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),)
+                  Text('45000',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                  Row(
+                    children: [
+                      SizedBox(width: 30,),
+                      
+                      
+                      ElevatedButton(onPressed: (){
+                      
+                      }, child: Text('View')),
+                      SizedBox(height: 20),
+                      IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
+                    ],
+                  )
                 ],),
-                SizedBox(width: 35),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                  IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
-                  SizedBox(height: 20),
-                  ElevatedButton(onPressed: (){
-
-                  }, child: Text('View')),
-                ],)
+                
+                
               ],
              ),
               
@@ -261,30 +275,34 @@ class  _cat extends State<Dogpage>{
              ),
              child: Row(
               children: [
-                SizedBox(width: 10),
+                SizedBox(width: 5),
                 CircleAvatar(
-                  radius: 65,
+                  radius: 50,
                   backgroundImage: AssetImage("assets/German Shepherd.jpg"),
                   
                 ),
-                SizedBox(width: 20),
+                SizedBox(width: 5),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                   Text('German Shepherd',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
                   Text('female',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
-                  Text('25000 rs',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),)
+                  Text('25000 rs',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                  Row(
+                    children: [
+                      SizedBox(width: 30,),
+                      
+                      
+                      ElevatedButton(onPressed: (){
+                      
+                      }, child: Text('View')),
+                      SizedBox(height: 20),
+                      IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
+                    ],
+                  )
                 ],),
-                SizedBox(width: 30),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                  IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
-                  SizedBox(height: 20),
-                  ElevatedButton(onPressed: (){
-
-                  }, child: Text('View')),
-                ],)
+                
+                
               ],
              ),
               
@@ -312,30 +330,34 @@ class  _cat extends State<Dogpage>{
              ),
              child: Row(
               children: [
-                SizedBox(width: 10),
+                SizedBox(width: 5),
                 CircleAvatar(
-                  radius: 65,
+                  radius: 50,
                   backgroundImage: AssetImage("assets/Rottweiler.jpg"),
                   
                 ),
-                SizedBox(width: 20),
+                SizedBox(width: 5),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                   Text('Rottweiler',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
                   Text('male',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
-                  Text('24000 rs',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),)
+                  Text('24000 rs',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                  Row(
+                    children: [
+                      SizedBox(width: 30,),
+                      ElevatedButton(onPressed: (){
+                      
+                      }, child: Text('View')),
+                      SizedBox(height: 20),
+                      IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
+                      
+                      
+                    ],
+                  )
                 ],),
                 SizedBox(width: 30),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                  IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
-                  SizedBox(height: 20),
-                  ElevatedButton(onPressed: (){
-
-                  }, child: Text('View')),
-                ],)
+                
               ],
              ),
               

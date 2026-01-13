@@ -1,4 +1,5 @@
 import 'package:empets/home.dart';
+import 'package:empets/login.dart';
 //import 'package:empets/menu.dart';
 //import 'package:empets/homebuyer.dart';
 //import 'package:empets/homeseller.dart';
@@ -41,12 +42,14 @@ class _MainhomeState extends State<Mainhome> {
         ],
       ),
       drawer: Drawer(
+        width: 250,
         backgroundColor: const Color.fromARGB(255, 239, 239, 239),
         shadowColor: Colors.black,
         surfaceTintColor: Colors.deepOrange,
         child: ListView(
           children: [
             DrawerHeader(
+              
               decoration: BoxDecoration(color: const Color.fromARGB(255, 204, 246, 255)),
               child: Column(
                 children: [
@@ -68,7 +71,23 @@ class _MainhomeState extends State<Mainhome> {
             ListTile(
               leading: Icon(Icons.settings),
               title: Text('Settings'),
-            ),]),),
+            ),
+            Divider(),
+            ListTile(
+              leading: Icon(Icons.logout),
+              title: Text('Logout'),
+              onTap: (){
+                 Navigator.pushAndRemoveUntil(
+    context,
+    MaterialPageRoute(builder: (context) =>  Login()),
+    (route) => false, 
+    
+  );
+  ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("logout successfully")));
+              },
+            ),
+            Divider(),
+            ]),),
       body: DefaultTabController(length: 2, child: Column(children: [
         Container(
           height: 50,

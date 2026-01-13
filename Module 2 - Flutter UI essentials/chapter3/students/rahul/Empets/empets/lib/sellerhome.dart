@@ -1,9 +1,11 @@
 //import 'package:empets/homebuyer.dart';
-import 'package:empets/Edit.dart';
+//import 'package:empets/Edit.dart';
+//import 'package:empets/add.dart';
 //import 'package:empets/add.dart';
 import 'package:empets/homeseller.dart';
 import 'package:empets/profile.dart';
 import 'package:flutter/material.dart';
+
 
 class Mainpagee extends StatefulWidget{
   Mainpagee({super.key});
@@ -11,12 +13,13 @@ class Mainpagee extends StatefulWidget{
   State<Mainpagee> createState() => _main();
 }
 class _main extends State<Mainpagee>{
+  
 
   int _currentindex = 0 ;
 
   final List<Widget> _pages =[
     Seller(),
-    Edit(),
+    // Add(),
     Profile(),
 
   ];
@@ -38,11 +41,11 @@ class _main extends State<Mainpagee>{
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home),
           label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.add),
-          label: 'Add'),
+
+          // BottomNavigationBarItem(icon: Icon(Icons.add),
+          // label: 'Add'),
           
-         
-          
+
           BottomNavigationBarItem(icon: Icon(Icons.person_2_rounded),
           label: 'Profile'),
         ]
