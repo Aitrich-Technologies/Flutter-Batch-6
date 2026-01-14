@@ -11,7 +11,9 @@ class CalculatorState extends State<Calculator> {
 
   String firstNumber = "";
   String operator = "";
-  bool shouldResetScreen =false;  
+  bool shouldResetScreen =false; 
+  bool isCalculated = false;
+  
 
   void addNumber(String num) {
     setState(() {
@@ -89,20 +91,25 @@ class CalculatorState extends State<Calculator> {
       firstNumber = screen.text;     
       operator = op;                 
       screenone.text="$firstNumber $operator";
-      shouldResetScreen=true;             
+      shouldResetScreen=true; 
+      isCalculated = false;
     });
     }
 
   void calculate() {
-    double num1 = double.tryParse(firstNumber) ?? 0;
+    if (isCalculated) return;
+      double num1 = double.tryParse(firstNumber) ?? 0;
     double num2 = double.tryParse(screen.text) ?? 0;
     double result = 0;
     if (operator == "+") {
       result = num1 + num2;
+      
     }
     else if(operator =="-"){
       result = num1 - num2;
+      
     }
+    
     else if(operator =="X"){
       result =num1 * num2;
     }
@@ -136,8 +143,11 @@ class CalculatorState extends State<Calculator> {
          screen.text=result.toString();
         }
       } 
+      isCalculated=true;
       shouldResetScreen =true;
+      
     });
+    
   }
   
   @override

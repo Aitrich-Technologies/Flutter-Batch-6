@@ -10,6 +10,49 @@ class Login extends StatefulWidget{
   State<Login> createState() => _login();
 }
 class _login extends State<Login>{
+  
+  TextEditingController emailctr = TextEditingController();
+  TextEditingController passctr = TextEditingController();
+  
+
+  bool isPasswordHidden = true;
+  bool isConfirmPasswordHidden = true;
+
+  
+  String? emailerror;
+  String? passerror;
+  
+
+  
+
+  String? emailval(String email) {
+    if (email.isEmpty) {
+      return 'Email cannot be empty';
+    }
+    if (!RegExp(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$')
+        .hasMatch(email)) {
+      return 'Enter a valid email';
+    }
+    return null;
+  }
+
+  String? passval(String pass) {
+    if (pass.isEmpty) {
+      return 'Password cannot be empty';
+    }
+    if (pass.length < 6) {
+      return 'Password must be at least 6 characters';
+    }
+    if (!RegExp(r'[A-Z]').hasMatch(pass)) {
+      return 'Password must contain one uppercase letter';
+    }
+    if (!RegExp(r'[0-9]').hasMatch(pass)) {
+      return 'Password must contain one number';
+    }
+    return null;
+  }
+
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -64,29 +107,53 @@ SizedBox(height: 30),
                   width: 2,
                 ),           
         ),
-        child: Padding(padding: EdgeInsetsGeometry.all(8),
+        child: Padding(padding: EdgeInsetsGeometry.all(18),
         child: Column(children: [
-          Padding(padding: EdgeInsetsGeometry.all(20),
-           child:  TextField(
-
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(100)
-                ),
-                label: Text('Username'),
-              ),
-            )),
-            Padding(padding: EdgeInsetsGeometry.all(20),
-           child:  TextField(
-
-              decoration: InputDecoration(
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(100)
-                ),
-                label: Text('Password'),
-              ),
-              obscureText: true,
-            )),
+          SizedBox(height: 30),
+          TextField(
+                      controller: emailctr,
+                      decoration: InputDecoration(
+                        labelText: 'Email',
+                        errorText: emailerror,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(100),
+                        ),
+                      ),
+                      onChanged: (value) {
+                        setState(() {
+                          emailerror = emailval(value);
+                        });
+                      },
+                    ),
+                    SizedBox(height: 20),
+            TextField(
+                      controller: passctr,
+                      obscureText: isPasswordHidden,
+                      decoration: InputDecoration(
+                        labelText: 'Password',
+                        errorText: passerror,
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(100),
+                        ),
+                        suffixIcon: IconButton(
+                          icon: Icon(
+                            isPasswordHidden
+                                ? Icons.visibility_off
+                                : Icons.visibility,
+                          ),
+                          onPressed: () {
+                            setState(() {
+                              isPasswordHidden = !isPasswordHidden;
+                            });
+                          },
+                        ),
+                      ),
+                      onChanged: (value) {
+                        setState(() {
+                          passerror = passval(value);
+                        });
+                      },
+                    ),
             TextButton(onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=> Forgot()));
             }, child: Text('Forgot Password',style: TextStyle(color: Colors.blue),)),
@@ -100,13 +167,29 @@ SizedBox(height: 20),
                   elevation: 10,
                 ),
               onPressed: (){
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Mainhome()));
+              setState(() {
+                          
+                          emailerror = emailval(emailctr.text);
+                          passerror = passval(passctr.text);
+                          
+                        });
 
+                        if (emailerror == null && passerror == null ) {
+                          Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => Mainhome(),
+                            ),
+                          );
+                        }
+                        else{
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text('error')));
+                        }
             },
             child: Text('Login')),
-            SizedBox(height: 30),
+            SizedBox(height: 20),
             Text('or'),
-            SizedBox(height: 30),
+            SizedBox(height: 20),
             Container(
               decoration: BoxDecoration(
                 color: Colors.blueGrey,

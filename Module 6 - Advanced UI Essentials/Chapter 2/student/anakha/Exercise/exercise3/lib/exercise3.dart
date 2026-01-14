@@ -49,7 +49,7 @@ class _Exercise3State extends State<Exercise3> {
       nameError = null;
       phoneNumberError = null;
       pincodeError = null;
-      selectedGender = 'Male';
+      selectedGender = 'Gender';
     });
   }
 
@@ -59,39 +59,40 @@ class _Exercise3State extends State<Exercise3> {
       appBar: AppBar(
         backgroundColor: Colors.blue,
         foregroundColor: Colors.white, 
-        title: const Text("Sample interest calculator"),
+        title:Text("Sample interest calculator"),
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20.0),
+        padding:EdgeInsets.all(20.0),
         child: Column(
           children: [
-            const CircleAvatar(
+            CircleAvatar(
               radius: 60,
               backgroundColor: Colors.blue,
               child: Icon(Icons.person, color: Colors.white, size: 80),
             ),
-            const SizedBox(height: 30),
+            SizedBox(height: 30),
             TextField(
               controller: nameController, 
               decoration: InputDecoration(
                 hintText: "Name",
                 errorText: nameError,
-                border: const OutlineInputBorder(),
+                border: OutlineInputBorder(),
               ),
               onChanged: (value) => setState(() => nameError = validateUsername(value)),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: 20),
             TextField(
               controller: phoneNumberController, 
               keyboardType: TextInputType.phone,
+              maxLength: 10,
               decoration: InputDecoration(
                 hintText: "Mobile Number",
                 errorText: phoneNumberError,
-                border: const OutlineInputBorder(),
+                border: OutlineInputBorder(),
               ),
               onChanged: (value) => setState(() => phoneNumberError = validatePhoneNumber(value)),
             ),
-            const SizedBox(height: 20),
+            SizedBox(height: 20),
             Row(
               crossAxisAlignment: CrossAxisAlignment.start, 
               children: [
@@ -99,19 +100,20 @@ class _Exercise3State extends State<Exercise3> {
                   child: TextField(
                     controller: pincodeController,
                     keyboardType: TextInputType.number,
+                    maxLength: 6,
                     decoration: InputDecoration(
                       hintText: "Pincode",
                       errorText: pincodeError,
-                      border: const OutlineInputBorder(),
+                      border: OutlineInputBorder(),
                     ),
                     onChanged: (value) => setState(() => pincodeError = validatePincode(value)),
                   ),
                 ),
-                const SizedBox(width: 15),
+                SizedBox(width: 15),
                 Expanded(
                   child: DropdownButtonFormField<String>(
                     value: selectedGender,
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       labelText: 'Gender',
                       border: OutlineInputBorder(),
                     ),
@@ -130,7 +132,7 @@ class _Exercise3State extends State<Exercise3> {
                 ),
               ],
             ),
-            const SizedBox(height: 30),
+            SizedBox(height: 30),
             Row(
               children: [
                 Expanded(
@@ -144,22 +146,22 @@ class _Exercise3State extends State<Exercise3> {
 
                       if (nameError == null && phoneNumberError == null && pincodeError == null) {
                         ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(content: Text("Registered Successfully")),
+                          SnackBar(content: Text("Registered Successfully")),
                         );
                       }
                       else{
                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Please fill all the fields")));
                       }
                     },
-                    child: const Text('Register'),
+                    child: Text('Register'),
                   ),
                 ),
-                const SizedBox(width: 15),
+                SizedBox(width: 15),
                 Expanded(
                   child: ElevatedButton(
                     onPressed: clearAll,
                     style: ElevatedButton.styleFrom(backgroundColor: Colors.grey[300]),
-                    child: const Text('Clear all', style: TextStyle(color: Colors.black)),
+                    child: Text('Clear all', style: TextStyle(color: Colors.black)),
                   ),
                 ),
               ],

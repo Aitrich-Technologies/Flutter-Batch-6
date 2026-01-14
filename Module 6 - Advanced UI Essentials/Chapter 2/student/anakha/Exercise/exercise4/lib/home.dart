@@ -57,14 +57,14 @@ class _HomeState extends State<Home> {
       backgroundColor: const Color(0xFFFFF1F6),
       appBar: AppBar(
         backgroundColor: Colors.brown,
-        title: const Text("SignUp"),
+        title:Text("SignUp"),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20),
+        padding: EdgeInsets.all(20),
         child: Column(
           children: [
-            const SizedBox(height: 20),
+            SizedBox(height: 20),
              CircleAvatar(
               radius: 60,
               backgroundColor: Colors.white,
@@ -74,8 +74,8 @@ class _HomeState extends State<Home> {
                 color: Colors.brown.shade300,
               ),
             ),
-            const SizedBox(height: 10),
-            const Text(
+            SizedBox(height: 10),
+            Text(
               "HAPPY BEAR",
               style: TextStyle(
                 fontSize: 20,
@@ -84,7 +84,7 @@ class _HomeState extends State<Home> {
               ),
             ),
 
-            const SizedBox(height: 30),
+            SizedBox(height: 30),
              TextField(
               controller: nameCtrl,
               decoration: InputDecoration(
@@ -168,7 +168,7 @@ class _HomeState extends State<Home> {
                     borderRadius: BorderRadius.circular(30),
                   ),
                 ),
-                child: const Text(
+                child: Text(
                   "LOGIN WITH EMAIL",
                   style: TextStyle(fontSize: 16),
                 ),
@@ -185,7 +185,7 @@ class _HomeState extends State<Home> {
 
               },
               
-              child: const Text("Click here"),
+              child: Text("Click here"),
             ),
               ],
             )

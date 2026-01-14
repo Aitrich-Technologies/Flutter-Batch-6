@@ -15,14 +15,14 @@ class _HomeState extends State<Signup> {
       backgroundColor: const Color(0xFFFFF1F6),
       appBar: AppBar(
         backgroundColor: Colors.pinkAccent,
-        title: const Text("Home"),
+        title: Text("Home"),
         centerTitle: true,
       ),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(20),
+        padding: EdgeInsets.all(20),
         child: Column(
           children: [
-            const SizedBox(height: 20),
+            SizedBox(height: 20),
              CircleAvatar(
               radius: 60,
               backgroundColor: Colors.white,
@@ -32,8 +32,8 @@ class _HomeState extends State<Signup> {
                 color: Colors.brown.shade300,
               ),
             ),
-            const SizedBox(height: 10),
-            const Text(
+            SizedBox(height: 10),
+            Text(
               "HAPPY BEAR",
               style: TextStyle(
                 fontSize: 20,
@@ -98,7 +98,7 @@ class _HomeState extends State<Signup> {
                 Navigator.push(context, MaterialPageRoute(builder: (context)=>Home()));
               },
               
-              child: const Text("Signup"),
+              child:Text("Signup"),
             ),
               ],
             )
