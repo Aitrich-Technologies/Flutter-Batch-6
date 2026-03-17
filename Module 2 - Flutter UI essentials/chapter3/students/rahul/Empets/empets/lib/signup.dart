@@ -76,12 +76,12 @@ class _SignupState extends State<Signup> {
     return Scaffold(
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.all(20),
+          padding: const EdgeInsets.all(10),
           child: Column(
             children: [
-              SizedBox(height: 10),
+              SizedBox(height: 5),
               Image.asset('assets/Elogo.png', width: 150, height: 100),
-              const SizedBox(height: 30),
+              SizedBox(height: 10),
 
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -99,7 +99,7 @@ class _SignupState extends State<Signup> {
                         MaterialPageRoute(builder: (context) => Login()),
                       );
                     },
-                    child: const Text('Log in'),
+                    child: const Text('Login'),
                   ),
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
@@ -109,7 +109,7 @@ class _SignupState extends State<Signup> {
                       textStyle: const TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                     ),
                     onPressed: () {},
-                    child: const Text('Sign up'),
+                    child: const Text('Signup'),
                   ),
                 ],
               ),
@@ -149,7 +149,7 @@ class _SignupState extends State<Signup> {
                       },
                     ),
 
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 10),
 
                     TextField(
                       controller: emailctr,
@@ -167,7 +167,7 @@ class _SignupState extends State<Signup> {
                       },
                     ),
 
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 10),
 
                     TextField(
                       controller: passctr,
@@ -198,7 +198,7 @@ class _SignupState extends State<Signup> {
                       },
                     ),
 
-                    const SizedBox(height: 20),
+                    const SizedBox(height: 10),
 
                     TextField(
                       controller: cpassctr,
@@ -251,6 +251,7 @@ class _SignupState extends State<Signup> {
                             emailerror == null &&
                             passerror == null &&
                             cpasserror == null) {
+                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("signup successfully")));
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
@@ -258,9 +259,32 @@ class _SignupState extends State<Signup> {
                             ),
                           );
                         }
+                        else{
+                          ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("error")));
+                        }
                       },
                       child: const Text('Sign Up'),
                     ),
+                    Text('or'),
+                    Container(
+              decoration: BoxDecoration(
+                color: Colors.blueGrey,
+                borderRadius: BorderRadius.circular(30)
+        
+              ),
+              width: 250,
+              height: 50,
+              
+              child: Row( children: [
+                SizedBox(width: 20),
+              Icon(Icons.g_mobiledata,size: 45,color: Colors.white,),
+              Icon(Icons.facebook,size: 25,color: Colors.white,),
+               SizedBox(width: 9),
+               Icon(Icons.apple,size: 30,color: Colors.white,),
+               SizedBox(width: 9),
+              Text('Sign in with ',style: TextStyle(color: Colors.white),)
+              ]
+              ),),
                   ],
                 ),
               ),

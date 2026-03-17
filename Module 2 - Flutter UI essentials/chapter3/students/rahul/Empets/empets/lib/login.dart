@@ -56,14 +56,12 @@ class _login extends State<Login>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Padding(padding: EdgeInsetsGeometry.all(20),
-      child: SingleChildScrollView(
-        child: Padding(padding: EdgeInsetsGeometry.all(20),
+      body: SingleChildScrollView(
+        child: Padding(padding: EdgeInsetsGeometry.all(10),
         child: Column(children: [
-
-          Image.asset('assets/Elogo.png', width: 150, height: 100),
-            SizedBox(height: 20),
-
+          SizedBox(height: 5),
+              Image.asset('assets/Elogo.png', width: 150, height: 100),
+              SizedBox(height: 10),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -75,7 +73,7 @@ class _login extends State<Login>{
                   textStyle: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
                   elevation: 10,
                 ),
-                onPressed: (){}, child: Text('Log in')),
+                onPressed: (){}, child: Text('Login')),
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.white,
@@ -86,12 +84,12 @@ class _login extends State<Login>{
                 ),
                 onPressed: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context) => Signup()));
-              }, child: Text('Sign in'))
+              }, child: Text('Signin'))
             ],),
-SizedBox(height: 30),
+      SizedBox(height: 20),
           Container(
           width: 500,
-          height: 450,
+          height: 400,
           decoration: BoxDecoration(
             color: const Color.fromARGB(255, 186, 207, 222),
             borderRadius: BorderRadius.circular(20),
@@ -107,7 +105,7 @@ SizedBox(height: 30),
                   width: 2,
                 ),           
         ),
-        child: Padding(padding: EdgeInsetsGeometry.all(18),
+        child: Padding(padding: EdgeInsetsGeometry.symmetric(horizontal: 10),
         child: Column(children: [
           SizedBox(height: 30),
           TextField(
@@ -125,7 +123,7 @@ SizedBox(height: 30),
                         });
                       },
                     ),
-                    SizedBox(height: 20),
+                    SizedBox(height: 10),
             TextField(
                       controller: passctr,
                       obscureText: isPasswordHidden,
@@ -157,7 +155,7 @@ SizedBox(height: 30),
             TextButton(onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=> Forgot()));
             }, child: Text('Forgot Password',style: TextStyle(color: Colors.blue),)),
-SizedBox(height: 20),
+      SizedBox(height: 10),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
@@ -173,7 +171,7 @@ SizedBox(height: 20),
                           passerror = passval(passctr.text);
                           
                         });
-
+      
                         if (emailerror == null && passerror == null ) {
                           Navigator.pushReplacement(
                             context,
@@ -187,14 +185,14 @@ SizedBox(height: 20),
                         }
             },
             child: Text('Login')),
-            SizedBox(height: 20),
+            SizedBox(height: 10),
             Text('or'),
-            SizedBox(height: 20),
+            SizedBox(height: 5),
             Container(
               decoration: BoxDecoration(
                 color: Colors.blueGrey,
                 borderRadius: BorderRadius.circular(30)
-
+      
               ),
               width: 250,
               height: 50,
@@ -206,18 +204,14 @@ SizedBox(height: 20),
                SizedBox(width: 9),
                Icon(Icons.apple,size: 30,color: Colors.white,),
                SizedBox(width: 9),
-              Text('Sign in with ',style: TextStyle(color: Colors.white),)
+              Text('Login in with ',style: TextStyle(color: Colors.white),)
               ]
               ),),
         ],),
         )
         ),
         ],)
-        
-        
         )
-
-      ),
       ),
     );
   }

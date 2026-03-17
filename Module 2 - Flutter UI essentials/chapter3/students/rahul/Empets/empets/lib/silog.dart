@@ -56,18 +56,17 @@ class _login extends State<siLogin>{
     return Scaffold(
       body: Padding(padding: EdgeInsetsGeometry.all(20),
       child: SingleChildScrollView(
-        child: Padding(padding: EdgeInsetsGeometry.all(20),
         child: Column(children: [
-
+        
           Image.asset('assets/Elogo.png', width: 150, height: 100),
             SizedBox(height: 20),
-
+        
             Text('LOGIN',style: TextStyle(fontSize: 30,fontWeight: FontWeight.bold),),
            
-SizedBox(height: 30),
+        SizedBox(height: 30),
           Container(
           width: 500,
-          height: 450,
+          height: 290,
           decoration: BoxDecoration(
             color: const Color.fromARGB(255, 186, 207, 222),
             borderRadius: BorderRadius.circular(20),
@@ -83,7 +82,7 @@ SizedBox(height: 30),
                   width: 2,
                 ),           
         ),
-        child: Padding(padding: EdgeInsetsGeometry.all(18),
+        child: Padding(padding: EdgeInsetsGeometry.all(5),
         child: Column(children: [
           SizedBox(height: 30),
           TextField(
@@ -131,7 +130,7 @@ SizedBox(height: 30),
                       },
                     ),
             
-SizedBox(height: 20),
+        SizedBox(height: 20),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.blue,
@@ -147,7 +146,7 @@ SizedBox(height: 20),
                           passerror = passval(passctr.text);
                           
                         });
-
+        
                         if (emailerror == null && passerror == null ) {
                           Navigator.pushReplacement(
                             context,
@@ -161,35 +160,12 @@ SizedBox(height: 20),
                         }
             },
             child: Text('Login')),
-            SizedBox(height: 20),
-            Text('or'),
-            SizedBox(height: 20),
-            Container(
-              decoration: BoxDecoration(
-                color: Colors.blueGrey,
-                borderRadius: BorderRadius.circular(30)
-
-              ),
-              width: 250,
-              height: 50,
-              
-              child: Row( children: [
-                SizedBox(width: 20),
-              Icon(Icons.g_mobiledata,size: 45,color: Colors.white,),
-              Icon(Icons.facebook,size: 25,color: Colors.white,),
-               SizedBox(width: 9),
-               Icon(Icons.apple,size: 30,color: Colors.white,),
-               SizedBox(width: 9),
-              Text('Sign in with ',style: TextStyle(color: Colors.white),)
-              ]
-              ),),
+            
+            
         ],),
         )
         ),
         ],)
-        
-        
-        )
 
       ),
       ),

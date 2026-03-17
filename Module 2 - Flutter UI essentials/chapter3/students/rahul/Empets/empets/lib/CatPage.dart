@@ -17,7 +17,7 @@ class  _cat extends State<Catpage>{
           children: [
             SizedBox(height: 30),
 
-            Padding(padding: EdgeInsetsGeometry.symmetric(horizontal: 70),
+            Padding(padding: EdgeInsetsGeometry.symmetric(horizontal: 10),
           child: TextField(
             
               decoration: InputDecoration(
@@ -29,7 +29,7 @@ class  _cat extends State<Catpage>{
             ),),
             SizedBox(height: 30),
 
-           Padding(padding: EdgeInsetsGeometry.symmetric(horizontal: 30),
+           Padding(padding: EdgeInsetsGeometry.symmetric(horizontal: 10),
            child: Column(
             children: [
 
@@ -54,36 +54,39 @@ class  _cat extends State<Catpage>{
              ),
              child: Row(
               children: [
-                SizedBox(width: 10),
+                SizedBox(width: 5),
                 CircleAvatar(
-                  radius: 65,
+                  radius: 50,
                   backgroundImage: AssetImage("assets/cat1.png"),
                   
                 ),
-                SizedBox(width: 70),
+                SizedBox(width: 5),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                   Text('Ragdol',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
                   Text('male',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
-                  Text('2000 rs',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),)
+                  Text('2000 rs',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                  Row(
+                    children: [
+                      SizedBox(width: 30),
+                      
+                      
+                      ElevatedButton(onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> Cat1()));
+                      }, child: Text('View')),
+                      SizedBox(width: 20),
+                      IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
+                    ],
+                  )
                 ],),
-                SizedBox(width: 70),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                  IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
-                  SizedBox(height: 20),
-                  ElevatedButton(onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> Cat1()));
-                  }, child: Text('View')),
-                ],)
+                
+                
               ],
              ),
               
             ),
             SizedBox(height: 20),
-
             Container(
               width: 500,
               height: 150,
@@ -105,87 +108,39 @@ class  _cat extends State<Catpage>{
              ),
              child: Row(
               children: [
-                SizedBox(width: 10),
+                SizedBox(width: 5),
                 CircleAvatar(
-                  radius: 65,
-                  backgroundImage: AssetImage("assets/cat2.png"),
+                  radius: 50,
+                  backgroundImage: AssetImage("assets/cat1.png"),
                   
                 ),
-                SizedBox(width: 70),
+                SizedBox(width: 5),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                  Text('Persian',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
-                  Text('female',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
-                  Text('3000 rs',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),)
-                ],),
-                SizedBox(width: 70),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                  IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
-                  SizedBox(height: 20),
-                  ElevatedButton(onPressed: (){
-
-                  }, child: Text('View')),
-                ],)
-              ],
-             ),
-              
-            ),
-            SizedBox(height: 20),
-
-            Container(
-              width: 500,
-              height: 150,
-             decoration: BoxDecoration(
-              color: Colors.purpleAccent,
-              borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black,
-                    blurRadius: 10,
-                    offset: Offset(4, 4)
-                  )
-                ],
-                border: Border.all(
-                  color: Colors.black,
-                  width: 2,
-                )
-
-             ),
-             child: Row(
-              children: [
-                SizedBox(width: 10),
-                CircleAvatar(
-                  radius: 65,
-                  backgroundImage: AssetImage("assets/cat3.png"),
-                  
-                ),
-                SizedBox(width: 50),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                  Text('Maine coon',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                  Text('Ragdol',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
                   Text('male',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
-                  Text('5000 rs',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),)
+                  Text('2000 rs',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                  Row(
+                    children: [
+                      SizedBox(width: 30),
+                      
+                      
+                      ElevatedButton(onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> Cat1()));
+                      }, child: Text('View')),
+                      SizedBox(width: 20),
+                      IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
+                    ],
+                  )
                 ],),
-                SizedBox(width: 55),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                  IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
-                  SizedBox(height: 20),
-                  ElevatedButton(onPressed: (){
-
-                  }, child: Text('View')),
-                ],)
+                
+                
               ],
              ),
               
             ),
             SizedBox(height: 20),
-
             Container(
               width: 500,
               height: 150,
@@ -207,36 +162,39 @@ class  _cat extends State<Catpage>{
              ),
              child: Row(
               children: [
-                SizedBox(width: 10),
+                SizedBox(width: 5),
                 CircleAvatar(
-                  radius: 65,
-                  backgroundImage: AssetImage("assets/cat4.png"),
+                  radius: 50,
+                  backgroundImage: AssetImage("assets/cat1.png"),
                   
                 ),
-                SizedBox(width: 60),
+                SizedBox(width: 5),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                  Text('Siamese',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                  Text('Ragdol',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
                   Text('male',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
-                  Text('4500',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),)
+                  Text('2000 rs',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                  Row(
+                    children: [
+                      SizedBox(width: 30),
+                      
+                      
+                      ElevatedButton(onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> Cat1()));
+                      }, child: Text('View')),
+                      SizedBox(width: 20),
+                      IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
+                    ],
+                  )
                 ],),
-                SizedBox(width: 70),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                  IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
-                  SizedBox(height: 20),
-                  ElevatedButton(onPressed: (){
-
-                  }, child: Text('View')),
-                ],)
+                
+                
               ],
              ),
               
             ),
             SizedBox(height: 20),
-
             Container(
               width: 500,
               height: 150,
@@ -258,85 +216,203 @@ class  _cat extends State<Catpage>{
              ),
              child: Row(
               children: [
-                SizedBox(width: 10),
+                SizedBox(width: 5),
                 CircleAvatar(
-                  radius: 65,
-                  backgroundImage: AssetImage("assets/cat5.png"),
+                  radius: 50,
+                  backgroundImage: AssetImage("assets/cat1.png"),
                   
                 ),
-                SizedBox(width: 20),
+                SizedBox(width: 5),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                  Text('abyssinian',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
-                  Text('female',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
-                  Text('2500 rs',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),)
-                ],),
-                SizedBox(width: 30),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                  IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
-                  SizedBox(height: 20),
-                  ElevatedButton(onPressed: (){
-
-                  }, child: Text('View')),
-                ],)
-              ],
-             ),
-              
-            ),
-            SizedBox(height: 20),
-
-            Container(
-              width: 500,
-              height: 150,
-             decoration: BoxDecoration(
-              color: Colors.purpleAccent,
-              borderRadius: BorderRadius.circular(20),
-                boxShadow: [
-                  BoxShadow(
-                    color: Colors.black,
-                    blurRadius: 10,
-                    offset: Offset(4, 4)
-                  )
-                ],
-                border: Border.all(
-                  color: Colors.black,
-                  width: 2,
-                )
-
-             ),
-             child: Row(
-              children: [
-                SizedBox(width: 10),
-                CircleAvatar(
-                  radius: 65,
-                  backgroundImage: AssetImage("assets/cat6.png"),
-                  
-                ),
-                SizedBox(width: 20),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                  Text('Scottish fold',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                  Text('Ragdol',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
                   Text('male',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
-                  Text('2400 rs',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),)
+                  Text('2000 rs',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                  Row(
+                    children: [
+                      SizedBox(width: 30),
+                      
+                      
+                      ElevatedButton(onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> Cat1()));
+                      }, child: Text('View')),
+                      SizedBox(width: 20),
+                      IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
+                    ],
+                  )
                 ],),
-                SizedBox(width: 30),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                  IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
-                  SizedBox(height: 20),
-                  ElevatedButton(onPressed: (){
-
-                  }, child: Text('View')),
-                ],)
+                
+                
               ],
              ),
               
             ),
+            SizedBox(height: 20),
+            Container(
+              width: 500,
+              height: 150,
+             decoration: BoxDecoration(
+              color: Colors.purpleAccent,
+              borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black,
+                    blurRadius: 10,
+                    offset: Offset(4, 4)
+                  )
+                ],
+                border: Border.all(
+                  color: Colors.black,
+                  width: 2,
+                )
+
+             ),
+             child: Row(
+              children: [
+                SizedBox(width: 5),
+                CircleAvatar(
+                  radius: 50,
+                  backgroundImage: AssetImage("assets/cat1.png"),
+                  
+                ),
+                SizedBox(width: 5),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                  Text('Ragdol',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                  Text('male',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                  Text('2000 rs',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                  Row(
+                    children: [
+                      SizedBox(width: 30),
+                      
+                      
+                      ElevatedButton(onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> Cat1()));
+                      }, child: Text('View')),
+                      SizedBox(width: 20),
+                      IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
+                    ],
+                  )
+                ],),
+                
+                
+              ],
+             ),
+              
+            ),
+            SizedBox(height: 20),
+            Container(
+              width: 500,
+              height: 150,
+             decoration: BoxDecoration(
+              color: Colors.purpleAccent,
+              borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black,
+                    blurRadius: 10,
+                    offset: Offset(4, 4)
+                  )
+                ],
+                border: Border.all(
+                  color: Colors.black,
+                  width: 2,
+                )
+
+             ),
+             child: Row(
+              children: [
+                SizedBox(width: 5),
+                CircleAvatar(
+                  radius: 50,
+                  backgroundImage: AssetImage("assets/cat1.png"),
+                  
+                ),
+                SizedBox(width: 5),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                  Text('Ragdol',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                  Text('male',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                  Text('2000 rs',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                  Row(
+                    children: [
+                      SizedBox(width: 30),
+                      
+                      
+                      ElevatedButton(onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> Cat1()));
+                      }, child: Text('View')),
+                      SizedBox(width: 20),
+                      IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
+                    ],
+                  )
+                ],),
+                
+                
+              ],
+             ),
+              
+            ),
+            SizedBox(height: 20),
+            Container(
+              width: 500,
+              height: 150,
+             decoration: BoxDecoration(
+              color: Colors.purpleAccent,
+              borderRadius: BorderRadius.circular(20),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black,
+                    blurRadius: 10,
+                    offset: Offset(4, 4)
+                  )
+                ],
+                border: Border.all(
+                  color: Colors.black,
+                  width: 2,
+                )
+
+             ),
+             child: Row(
+              children: [
+                SizedBox(width: 5),
+                CircleAvatar(
+                  radius: 50,
+                  backgroundImage: AssetImage("assets/cat1.png"),
+                  
+                ),
+                SizedBox(width: 5),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                  Text('Ragdol',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                  Text('male',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                  Text('2000 rs',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+                  Row(
+                    children: [
+                      SizedBox(width: 30),
+                      
+                      
+                      ElevatedButton(onPressed: (){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> Cat1()));
+                      }, child: Text('View')),
+                      SizedBox(width: 20),
+                      IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
+                    ],
+                  )
+                ],),
+                
+                
+              ],
+             ),
+              
+            ),
+            SizedBox(height: 20),
+
+
 
             ],
            ),
@@ -347,3 +423,257 @@ class  _cat extends State<Catpage>{
     );
   }
 }
+
+            // Container(
+            //   width: 500,
+            //   height: 150,
+            //  decoration: BoxDecoration(
+            //   color: Colors.purpleAccent,
+            //   borderRadius: BorderRadius.circular(20),
+            //     boxShadow: [
+            //       BoxShadow(
+            //         color: Colors.black,
+            //         blurRadius: 10,
+            //         offset: Offset(4, 4)
+            //       )
+            //     ],
+            //     border: Border.all(
+            //       color: Colors.black,
+            //       width: 2,
+            //     )
+
+            //  ),
+            //  child: Row(
+            //   children: [
+            //     SizedBox(width: 10),
+            //     CircleAvatar(
+            //       radius: 65,
+            //       backgroundImage: AssetImage("assets/cat2.png"),
+                  
+            //     ),
+            //     SizedBox(width: 70),
+            //     Column(
+            //       mainAxisAlignment: MainAxisAlignment.center,
+            //       children: [
+            //       Text('Persian',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+            //       Text('female',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+            //       Text('3000 rs',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),)
+            //     ],),
+            //     SizedBox(width: 70),
+            //     Column(
+            //       mainAxisAlignment: MainAxisAlignment.center,
+            //       children: [
+            //       IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
+            //       SizedBox(height: 20),
+            //       ElevatedButton(onPressed: (){
+
+            //       }, child: Text('View')),
+            //     ],)
+            //   ],
+            //  ),
+              
+            // ),
+            // SizedBox(height: 20),
+
+            // Container(
+            //   width: 500,
+            //   height: 150,
+            //  decoration: BoxDecoration(
+            //   color: Colors.purpleAccent,
+            //   borderRadius: BorderRadius.circular(20),
+            //     boxShadow: [
+            //       BoxShadow(
+            //         color: Colors.black,
+            //         blurRadius: 10,
+            //         offset: Offset(4, 4)
+            //       )
+            //     ],
+            //     border: Border.all(
+            //       color: Colors.black,
+            //       width: 2,
+            //     )
+
+            //  ),
+            //  child: Row(
+            //   children: [
+            //     SizedBox(width: 10),
+            //     CircleAvatar(
+            //       radius: 65,
+            //       backgroundImage: AssetImage("assets/cat3.png"),
+                  
+            //     ),
+            //     SizedBox(width: 50),
+            //     Column(
+            //       mainAxisAlignment: MainAxisAlignment.center,
+            //       children: [
+            //       Text('Maine coon',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+            //       Text('male',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+            //       Text('5000 rs',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),)
+            //     ],),
+            //     SizedBox(width: 55),
+            //     Column(
+            //       mainAxisAlignment: MainAxisAlignment.center,
+            //       children: [
+            //       IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
+            //       SizedBox(height: 20),
+            //       ElevatedButton(onPressed: (){
+
+            //       }, child: Text('View')),
+            //     ],)
+            //   ],
+            //  ),
+              
+            // ),
+            // SizedBox(height: 20),
+
+            // Container(
+            //   width: 500,
+            //   height: 150,
+            //  decoration: BoxDecoration(
+            //   color: Colors.purpleAccent,
+            //   borderRadius: BorderRadius.circular(20),
+            //     boxShadow: [
+            //       BoxShadow(
+            //         color: Colors.black,
+            //         blurRadius: 10,
+            //         offset: Offset(4, 4)
+            //       )
+            //     ],
+            //     border: Border.all(
+            //       color: Colors.black,
+            //       width: 2,
+            //     )
+
+            //  ),
+            //  child: Row(
+            //   children: [
+            //     SizedBox(width: 10),
+            //     CircleAvatar(
+            //       radius: 65,
+            //       backgroundImage: AssetImage("assets/cat4.png"),
+                  
+            //     ),
+            //     SizedBox(width: 60),
+            //     Column(
+            //       mainAxisAlignment: MainAxisAlignment.center,
+            //       children: [
+            //       Text('Siamese',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+            //       Text('male',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+            //       Text('4500',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),)
+            //     ],),
+            //     SizedBox(width: 70),
+            //     Column(
+            //       mainAxisAlignment: MainAxisAlignment.center,
+            //       children: [
+            //       IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
+            //       SizedBox(height: 20),
+            //       ElevatedButton(onPressed: (){
+
+            //       }, child: Text('View')),
+            //     ],)
+            //   ],
+            //  ),
+              
+            // ),
+            // SizedBox(height: 20),
+
+            // Container(
+            //   width: 500,
+            //   height: 150,
+            //  decoration: BoxDecoration(
+            //   color: Colors.purpleAccent,
+            //   borderRadius: BorderRadius.circular(20),
+            //     boxShadow: [
+            //       BoxShadow(
+            //         color: Colors.black,
+            //         blurRadius: 10,
+            //         offset: Offset(4, 4)
+            //       )
+            //     ],
+            //     border: Border.all(
+            //       color: Colors.black,
+            //       width: 2,
+            //     )
+
+            //  ),
+            //  child: Row(
+            //   children: [
+            //     SizedBox(width: 10),
+            //     CircleAvatar(
+            //       radius: 65,
+            //       backgroundImage: AssetImage("assets/cat5.png"),
+                  
+            //     ),
+            //     SizedBox(width: 20),
+            //     Column(
+            //       mainAxisAlignment: MainAxisAlignment.center,
+            //       children: [
+            //       Text('abyssinian',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+            //       Text('female',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+            //       Text('2500 rs',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),)
+            //     ],),
+            //     SizedBox(width: 30),
+            //     Column(
+            //       mainAxisAlignment: MainAxisAlignment.center,
+            //       children: [
+            //       IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
+            //       SizedBox(height: 20),
+            //       ElevatedButton(onPressed: (){
+
+            //       }, child: Text('View')),
+            //     ],)
+            //   ],
+            //  ),
+              
+            // ),
+            // SizedBox(height: 20),
+
+            // Container(
+            //   width: 500,
+            //   height: 150,
+            //  decoration: BoxDecoration(
+            //   color: Colors.purpleAccent,
+            //   borderRadius: BorderRadius.circular(20),
+            //     boxShadow: [
+            //       BoxShadow(
+            //         color: Colors.black,
+            //         blurRadius: 10,
+            //         offset: Offset(4, 4)
+            //       )
+            //     ],
+            //     border: Border.all(
+            //       color: Colors.black,
+            //       width: 2,
+            //     )
+
+            //  ),
+            //  child: Row(
+            //   children: [
+            //     SizedBox(width: 10),
+            //     CircleAvatar(
+            //       radius: 65,
+            //       backgroundImage: AssetImage("assets/cat6.png"),
+                  
+            //     ),
+            //     SizedBox(width: 20),
+            //     Column(
+            //       mainAxisAlignment: MainAxisAlignment.center,
+            //       children: [
+            //       Text('Scottish fold',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+            //       Text('male',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),),
+            //       Text('2400 rs',style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),)
+            //     ],),
+            //     SizedBox(width: 30),
+            //     Column(
+            //       mainAxisAlignment: MainAxisAlignment.center,
+            //       children: [
+            //       IconButton(onPressed: (){}, icon: Icon(Icons.favorite_border_sharp)),
+            //       SizedBox(height: 20),
+            //       ElevatedButton(onPressed: (){
+
+            //       }, child: Text('View')),
+            //     ],)
+            //   ],
+            //  ),
+              
+            // ),
