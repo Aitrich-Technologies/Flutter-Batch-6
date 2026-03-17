@@ -1,96 +1,156 @@
 import 'package:flutter/material.dart';
 import 'package:sqflite/sqflite.dart';
-import 'package:path/path.dart';
+import 'package:path/path.dart' as p;
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'SQLite Example',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       home: MyHomePage(),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late Database _database;
-  List<String> _items = [];
+  Database? _database;
+  List<Map<String, dynamic>> _items = [];
 
   @override
   void initState() {
     super.initState();
     _initDatabase();
-    _fetchItems();
   }
 
   Future<void> _initDatabase() async {
-    _database = await openDatabase(
-      join(await getDatabasesPath(), 'items_database.db'),
-      onCreate: (db, version) {
-        return db.execute(
-          'CREATE TABLE items(id INTEGER PRIMARY KEY, name TEXT)',
+    final db = await openDatabase(
+     p.join(await getDatabasesPath(), 'items_database.db'),                                                                                                    
+      version: 1,
+      onCreate: (db, version) async {
+        await db.execute(
+          'CREATE TABLE items(id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT)',
         );
       },
-      version: 1,
     );
+
+    _database = db;
+    await _fetchItems();    
   }
 
   Future<void> _fetchItems() async {
-    final List<Map<String, dynamic>> maps = await _database.query('items');
+    if (_database == null) return;
+
+    final maps = await _database!.query('items');
+
+    if (!mounted) return; 
+
     setState(() {
-      _items = List.generate(maps.length, (i) {
-        return maps[i]['name'];
-      });
+      _items = maps;
     });
   }
-//UPDATE LOGIC
 
   Future<void> _addItem() async {
-    await _database.insert(
+    if (_database == null) return;
+
+    await _database!.insert(
       'items',
       {'name': 'New Item'},
       conflictAlgorithm: ConflictAlgorithm.replace,
     );
-    _fetchItems();
+
+    await _fetchItems();
   }
 
   Future<void> _deleteItem(int id) async {
-    await _database.delete(
+    if (_database == null) return;
+
+    await _database!.delete(
       'items',
       where: 'id = ?',
       whereArgs: [id],
     );
-    _fetchItems();
+
+    await _fetchItems();
   }
 
-  
+  Future<void> _updateItem(int id, String newName) async {
+    if (_database == null) return;
+    await _database!.update(
+      'items',
+      {'name': newName},
+      where: 'id = ?',
+      whereArgs: [id],
+    );
+
+    await _fetchItems();
+  }
+
+  void _showUpdateDialog(int id, String currentName) {
+    final controller = TextEditingController(text: currentName);
+
+    showDialog(
+      context: context,
+      builder: (BuildContext dialogContext) { 
+        return AlertDialog(
+          title: const Text("Update Item"),
+          content: TextField(
+            controller: controller,
+            decoration: const InputDecoration(
+              labelText: "Item Name",
+            ),
+          ),
+          actions: [
+            TextButton(
+              onPressed: () => Navigator.of(dialogContext).pop(),
+              child: const Text("Cancel"),
+            ),
+            ElevatedButton(
+              onPressed: () async {
+                await _updateItem(id, controller.text);
+                if (!mounted) return; 
+                Navigator.of(dialogContext).pop();
+              },
+              child: const Text("Update"),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  @override
+  void dispose() {
+    _database?.close(); 
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('SQLite Example'),
+        title: const Text('SQLite Example'),
         backgroundColor: Colors.orange,
         actions: [
-          
           IconButton(
-            
-            icon: Icon(Icons.delete),
+            icon: const Icon(Icons.delete),
             onPressed: () async {
-              await _database.delete('items');
-              _fetchItems();
+              if (_database == null) return;
+
+              await _database!.delete('items');
+              await _fetchItems();
             },
           ),
         ],
@@ -98,16 +158,19 @@ class _MyHomePageState extends State<MyHomePage> {
       body: ListView.builder(
         itemCount: _items.length,
         itemBuilder: (context, index) {
+          final item = _items[index];
+
           return ListTile(
-            title: Text(_items[index]),
-            onTap: () => _deleteItem(index + 1),
-            //LONGPRESS UPDATE LOGIC
+            title: Text(item['name']),
+            onTap: () => _deleteItem(item['id']),
+            onLongPress: () =>
+                _showUpdateDialog(item['id'], item['name']),
           );
         },
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: _addItem,
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
     );
   }

@@ -12,8 +12,7 @@ void main() {
   print('Union of sets: $union');
 
   // Intersection of the sets
-  Set<int> intersection = set1.intersection(set2);
-  print('Intersection of sets: $intersection');
+
 
   // Difference of the sets
   Set<int> Difference =set1.difference(set2);
