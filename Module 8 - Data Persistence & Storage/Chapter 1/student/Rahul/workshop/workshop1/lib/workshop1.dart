@@ -56,14 +56,15 @@ class _ToDoListState extends State<ToDoList> {
       });
     }
   }
-Future<void> _remove(int index) async {
-  setState(() {
-    tasks.removeAt(index);
-    
-  });
-   SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setStringList('tasks', tasks);
-}
+  void _remove(){
+    String newTask = _controller.text;
+    if (newTask.isNotEmpty) {
+      setState(() {
+        tasks.remove(newTask);
+        _controller.clear();
+        _saveTasks();
+      });
+    }
     // String taskss = _controller.text;
     // if (taskss.isNotEmpty) {
     //   setState(() {
@@ -72,7 +73,7 @@ Future<void> _remove(int index) async {
         
     //   });
     // }
-  
+  }
   //add remove logic
 
   @override
@@ -108,10 +109,8 @@ Future<void> _remove(int index) async {
               itemBuilder: (context, index) => ListTile(
                 title: Text(tasks[index]),
                 trailing: IconButton(onPressed: (){
-                  _remove(index);
-                }, icon: Icon(Icons.delete_forever))
-                
-                
+                  _remove();
+                }, icon: Icon(Icons.delete_forever)),
               ),
             ),
           ),
